@@ -1,0 +1,246 @@
+[
+    {
+        "id": "97cdf84d.941818",
+        "type": "tab",
+        "label": "Universal Translator",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6b8d8ccd.4a033c",
+        "type": "microphone",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "616b9a8d.672574"
+            ]
+        ]
+    },
+    {
+        "id": "616b9a8d.672574",
+        "type": "watson-speech-to-text",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "speakerlabels": false,
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "NoCustomisationSetting",
+        "band": "BroadbandModel",
+        "bandhidden": "BroadbandModel",
+        "password": "pAJYZ8x4Ph7t",
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "5c79c507.6a39a4",
+                "ff4ea816.4239e8"
+            ]
+        ]
+    },
+    {
+        "id": "5c79c507.6a39a4",
+        "type": "debug",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "transcription",
+        "x": 570,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "3c08a096.00878",
+        "type": "inject",
+        "z": "97cdf84d.941818",
+        "name": "Thanks",
+        "topic": "",
+        "payload": "Thanks for attending Think",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "5d172377.8c07d4"
+            ]
+        ]
+    },
+    {
+        "id": "5d172377.8c07d4",
+        "type": "watson-text-to-speech",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "lang": "es-ES",
+        "langhidden": "es-ES",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "es-ES_LauraVoice",
+        "voicehidden": "en-US_MichaelVoice",
+        "format": "audio/wav",
+        "password": "5824BY7NvNkT",
+        "apikey": "",
+        "payload-response": false,
+        "default-endpoint": false,
+        "service-endpoint": "",
+        "x": 330,
+        "y": 320,
+        "wires": [
+            [
+                "2ae7512.727e4ae",
+                "9c6136b6.59e94"
+            ]
+        ]
+    },
+    {
+        "id": "9c6136b6.59e94",
+        "type": "change",
+        "z": "97cdf84d.941818",
+        "name": "Speech WAV file",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "speech",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "b05f987.4cfba68"
+            ]
+        ]
+    },
+    {
+        "id": "b05f987.4cfba68",
+        "type": "play audio",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "x": 770,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "2ae7512.727e4ae",
+        "type": "debug",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 550,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "bdda2f3a.4e9a5",
+        "type": "debug",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ff4ea816.4239e8",
+        "type": "change",
+        "z": "97cdf84d.941818",
+        "name": "Transcription",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "transcription",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "2dacf4f7.4ef64c"
+            ]
+        ]
+    },
+    {
+        "id": "9e3edea4.5da728",
+        "type": "comment",
+        "z": "97cdf84d.941818",
+        "name": "1. Create Watson Services - Speech/Lang",
+        "info": "# Create service instances of\n\n## Watson Speech to Text\n- https://cloud.ibm.com/catalog/services/speech-to-text\n\n## Watson Text to Speech\n- https://cloud.ibm.com/catalog/services/text-to-speech\n\n## Language Translator\n- https://cloud.ibm.com/catalog/services/language-translator\n\n# Create \"Connections\" to these services in your CF Application\n- Restage your CF application\n- The credential bindings will be done for you\nwithout having to copy API Keys or IAM credentials ",
+        "x": 220,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "50b7abed.e61784",
+        "type": "comment",
+        "z": "97cdf84d.941818",
+        "name": "2. Additional Node-RED Nodes",
+        "info": "From the Node-RED Menu:\n- Select Manage Palette\n- Select Install\n- Search for node-red-contrib-browser-utils\n - 'microphone' node will be installed\n\n- Search for node-red-contrib-play-audio\n - 'play audio' node will be installed",
+        "x": 190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2dacf4f7.4ef64c",
+        "type": "watson-translator",
+        "z": "97cdf84d.941818",
+        "name": "",
+        "action": "translate",
+        "basemodel": "en-tr",
+        "domain": "general",
+        "srclang": "en",
+        "destlang": "es",
+        "password": "",
+        "apikey": "",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "en",
+        "destlanghidden": "es",
+        "basemodelhidden": "en-tr",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "neural": false,
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "bdda2f3a.4e9a5",
+                "5d172377.8c07d4"
+            ]
+        ]
+    }
+]
