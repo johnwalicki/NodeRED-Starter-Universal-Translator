@@ -27,7 +27,6 @@ This tutorial can be completed using an IBM Cloud Lite account.
 
 You can complete this task in no more than 15 minutes.
 
-<div style="page-break-after: always;"></div>
 ## Step 1 - Create a Node-RED Starter Application
 
 Follow these steps to create a Node-RED Starter application in IBM Cloud.
@@ -65,7 +64,6 @@ Return to the IBM Cloud Catalog, search for [**speech**](https://cloud.ibm.com/c
 - Click on [**Language Translator**](https://cloud.ibm.com/catalog/services/language-translator) and press the **Create** button.
  ![Create Language Translator](images/Create-AI-LangTrans.png)
 
-<div style="page-break-after: always;"></div>
 ## Step 3 - Connect the Watson AI Services to Node-RED Starter Application
 
 In this step, the tutorial demonstrates how to connect the newly created Watson AI services to your Node-RED Starter application.
@@ -103,7 +101,6 @@ In this step, the tutorial demonstrates how to connect the newly created Watson 
 - Once the Green **Running** icon appears, click the **View App URL** link.
   ![Starting IoTP Starter Kit](images/Starting-StarterKit-NodeRED.png)
 
-<div style="page-break-after: always;"></div>
 ## Step 5 - Open the Node-RED visual programming editor
 A new browser tab will open to the Node-RED start page.  Node-RED is an open-source Node.js application that provides a visual programming editor that makes it easy to wire together flows.
 
@@ -142,7 +139,6 @@ The Universal Translator needs a microphone to record your message and the abili
 - Search for **play-audio**, find the *node-red-contrib-play-audio* node and press the **Install** button.
  ![Install Play Audio](images/Starter-NodeRED-Install-PlayAudio.png)
 
-<div style="page-break-after: always;"></div>
 ## Step 7 - Build a Speech to Text Flow
 
 Node-RED allows you to drag and drop Nodes from the left palette onto your flow canvas and wire them together to create programs.
@@ -157,7 +153,6 @@ Node-RED allows you to drag and drop Nodes from the left palette onto your flow 
 - Record a message!
 ![Speech to Text flow](images/Starter-NodeRED-STT-flow.png)
 
-<div style="page-break-after: always;"></div>
 ## Step 8 - Build a Text to Speech Flow
 
 - Grab an *Inject* node and drag it to your flow.
