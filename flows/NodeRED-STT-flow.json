@@ -1,0 +1,48 @@
+[
+    {
+        "id": "6a00e13e.adb4f8",
+        "type": "microphone",
+        "z": "8c396019.7fb488",
+        "name": "",
+        "x": 165,
+        "y": 113,
+        "wires": [
+            [
+                "3a613c9.a4ff6c4"
+            ]
+        ]
+    },
+    {
+        "id": "3a613c9.a4ff6c4",
+        "type": "watson-speech-to-text",
+        "z": "8c396019.7fb488",
+        "name": "",
+        "speakerlabels": false,
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "NoCustomisationSetting",
+        "band": "BroadbandModel",
+        "bandhidden": "BroadbandModel",
+        "password": "pAJYZ8x4Ph7t",
+        "x": 355,
+        "y": 113,
+        "wires": [
+            [
+                "f8b78cab.e8cbc8"
+            ]
+        ]
+    },
+    {
+        "id": "f8b78cab.e8cbc8",
+        "type": "debug",
+        "z": "8c396019.7fb488",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "transcription",
+        "x": 585,
+        "y": 113,
+        "wires": []
+    }
+]

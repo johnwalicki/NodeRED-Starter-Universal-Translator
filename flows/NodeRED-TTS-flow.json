@@ -1,0 +1,96 @@
+[
+    {
+        "id": "bffd300.b38145",
+        "type": "inject",
+        "z": "8c396019.7fb488",
+        "name": "Thanks",
+        "topic": "",
+        "payload": "Thanks for attending Think",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 116,
+        "y": 307,
+        "wires": [
+            [
+                "744cd953.522f98"
+            ]
+        ]
+    },
+    {
+        "id": "744cd953.522f98",
+        "type": "watson-text-to-speech",
+        "z": "8c396019.7fb488",
+        "name": "",
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "en-US_MichaelVoice",
+        "voicehidden": "en-US_MichaelVoice",
+        "format": "audio/wav",
+        "password": "5824BY7NvNkT",
+        "apikey": "",
+        "payload-response": false,
+        "default-endpoint": false,
+        "service-endpoint": "",
+        "x": 316,
+        "y": 307,
+        "wires": [
+            [
+                "beadbbf7.b26ed8",
+                "e8935e9e.758c58"
+            ]
+        ]
+    },
+    {
+        "id": "e8935e9e.758c58",
+        "type": "change",
+        "z": "8c396019.7fb488",
+        "name": "Speech WAV file",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "speech",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 546,
+        "y": 307,
+        "wires": [
+            [
+                "1d17ac45.615854"
+            ]
+        ]
+    },
+    {
+        "id": "1d17ac45.615854",
+        "type": "play audio",
+        "z": "8c396019.7fb488",
+        "name": "",
+        "x": 756,
+        "y": 307,
+        "wires": []
+    },
+    {
+        "id": "beadbbf7.b26ed8",
+        "type": "debug",
+        "z": "8c396019.7fb488",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 536,
+        "y": 347,
+        "wires": []
+    }
+]

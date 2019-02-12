@@ -1,0 +1,246 @@
+[
+    {
+        "id": "d15aebb5.fcc3e8",
+        "type": "tab",
+        "label": "Universal Translator",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "eea18ac9.8a9fc",
+        "type": "microphone",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "2a64e6f5.fa259a"
+            ]
+        ]
+    },
+    {
+        "id": "2a64e6f5.fa259a",
+        "type": "watson-speech-to-text",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "speakerlabels": false,
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "NoCustomisationSetting",
+        "band": "BroadbandModel",
+        "bandhidden": "BroadbandModel",
+        "password": "pAJYZ8x4Ph7t",
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "a6a37c44.d82ba",
+                "34b18fd1.f49da8"
+            ]
+        ]
+    },
+    {
+        "id": "a6a37c44.d82ba",
+        "type": "debug",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "transcription",
+        "x": 570,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "fbe343d1.b63298",
+        "type": "inject",
+        "z": "d15aebb5.fcc3e8",
+        "name": "Thanks",
+        "topic": "",
+        "payload": "Thanks for attending Think",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "2c2b1df8.7aa712"
+            ]
+        ]
+    },
+    {
+        "id": "2c2b1df8.7aa712",
+        "type": "watson-text-to-speech",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "lang": "es-ES",
+        "langhidden": "es-ES",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "es-ES_LauraVoice",
+        "voicehidden": "en-US_MichaelVoice",
+        "format": "audio/wav",
+        "password": "5824BY7NvNkT",
+        "apikey": "",
+        "payload-response": false,
+        "default-endpoint": false,
+        "service-endpoint": "",
+        "x": 330,
+        "y": 320,
+        "wires": [
+            [
+                "1ad04b7e.0e5c65",
+                "dbffae26.ce215"
+            ]
+        ]
+    },
+    {
+        "id": "dbffae26.ce215",
+        "type": "change",
+        "z": "d15aebb5.fcc3e8",
+        "name": "Speech WAV file",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "speech",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "abf585a1.17195"
+            ]
+        ]
+    },
+    {
+        "id": "abf585a1.17195",
+        "type": "play audio",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "x": 770,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1ad04b7e.0e5c65",
+        "type": "debug",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 550,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "91e6b401.f0a4d",
+        "type": "watson-translator",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "action": "translate",
+        "basemodel": "en-tr",
+        "domain": "general",
+        "srclang": "en",
+        "destlang": "es",
+        "password": "",
+        "apikey": "tBK7T1X7QBqKCK38qdUdmNYMtO9Rliafy9i4AHhvixWA",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "en",
+        "destlanghidden": "es",
+        "basemodelhidden": "en-tr",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "neural": false,
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "6109e7e.0802b18",
+                "2c2b1df8.7aa712"
+            ]
+        ]
+    },
+    {
+        "id": "6109e7e.0802b18",
+        "type": "debug",
+        "z": "d15aebb5.fcc3e8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "34b18fd1.f49da8",
+        "type": "change",
+        "z": "d15aebb5.fcc3e8",
+        "name": "Transcription",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "transcription",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "91e6b401.f0a4d"
+            ]
+        ]
+    },
+    {
+        "id": "6f2e4e46.55f8a8",
+        "type": "comment",
+        "z": "d15aebb5.fcc3e8",
+        "name": "1. Create Watson Services - Speech/Lang",
+        "info": "# Create service instances of\n\n## Watson Speech to Text\n- https://cloud.ibm.com/catalog/services/speech-to-text\n\n## Watson Text to Speech\n- https://cloud.ibm.com/catalog/services/text-to-speech\n\n## Language Translator\n- https://cloud.ibm.com/catalog/services/language-translator\n\n# Create \"Connections\" to these services in your CF Application\n- Restage your CF application\n- The credential bindings will be done for you\nwithout having to copy API Keys or IAM credentials ",
+        "x": 220,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "802eb21.620885",
+        "type": "comment",
+        "z": "d15aebb5.fcc3e8",
+        "name": "2. Additional Node-RED Nodes",
+        "info": "From the Node-RED Menu:\n- Select Manage Palette\n- Select Install\n- Search for node-red-contrib-browser-utils\n - 'microphone' node will be installed\n\n- Search for node-red-contrib-play-audio\n - 'play audio' node will be installed",
+        "x": 190,
+        "y": 80,
+        "wires": []
+    }
+]
