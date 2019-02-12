@@ -27,6 +27,7 @@ This tutorial can be completed using an IBM Cloud Lite account.
 
 You can complete this task in no more than 15 minutes.
 
+<div style="page-break-after: always;"></div>
 ## Step 1 - Create a Node-RED Starter Application
 
 Follow these steps to create a Node-RED Starter application in IBM Cloud.
@@ -64,6 +65,7 @@ Return to the IBM Cloud Catalog, search for [**speech**](https://cloud.ibm.com/c
 - Click on [**Language Translator**](https://cloud.ibm.com/catalog/services/language-translator) and press the **Create** button.
  ![Create Language Translator](images/Create-AI-LangTrans.png)
 
+<div style="page-break-after: always;"></div>
 ## Step 3 - Connect the Watson AI Services to Node-RED Starter Application
 
 In this step, the tutorial demonstrates how to connect the newly created Watson AI services to your Node-RED Starter application.
@@ -101,7 +103,7 @@ In this step, the tutorial demonstrates how to connect the newly created Watson 
 - Once the Green **Running** icon appears, click the **View App URL** link.
   ![Starting IoTP Starter Kit](images/Starting-StarterKit-NodeRED.png)
 
-
+<div style="page-break-after: always;"></div>
 ## Step 5 - Open the Node-RED visual programming editor
 A new browser tab will open to the Node-RED start page.  Node-RED is an open-source Node.js application that provides a visual programming editor that makes it easy to wire together flows.
 
@@ -119,7 +121,7 @@ Several panels will help you set up the Node-RED Starter application.
 * If you forget, you can reset the username / password in the Cloudant DB or by setting IBM Cloud environment variables.  Click the **Finish** button to proceed. Step 4 of 5
 <img src="images/Starter-NodeREDSetup-EnvVars.png" width="70%">
 
-* Click the **Go to your Node-RED flow editor** button to launch the Node-RED flow editor. Step 4 of 4
+* Click the **Go to your Node-RED flow editor** button to launch the Node-RED flow editor. Step 4 of 5
 <img src="images/Starter-NodeREDSetup-Launch.png" width="70%">
 
 * Click on the Person icon in the upper right corner and **Sign in** with your new username and password credentials.
@@ -140,6 +142,7 @@ The Universal Translator needs a microphone to record your message and the abili
 - Search for **play-audio**, find the *node-red-contrib-play-audio* node and press the **Install** button.
  ![Install Play Audio](images/Starter-NodeRED-Install-PlayAudio.png)
 
+<div style="page-break-after: always;"></div>
 ## Step 7 - Build a Speech to Text Flow
 
 Node-RED allows you to drag and drop Nodes from the left palette onto your flow canvas and wire them together to create programs.
@@ -154,6 +157,7 @@ Node-RED allows you to drag and drop Nodes from the left palette onto your flow 
 - Record a message!
 ![Speech to Text flow](images/Starter-NodeRED-STT-flow.png)
 
+<div style="page-break-after: always;"></div>
 ## Step 8 - Build a Text to Speech Flow
 
 - Grab an *Inject* node and drag it to your flow.
@@ -170,7 +174,7 @@ The returned audio transcription from the Text to Speech node will be returned a
 - The audio of the message will play
 ![Text to Speech flow](images/Starter-NodeRED-TTS-flow.png)
 
-## Build a Language Translator flow
+## Step 9 - Build a Language Translator flow
 
 Our Universal Translator will use the recorded transcript as the input to the language translator node and then send the foreign language to the Text to Speech node.
 
@@ -179,24 +183,24 @@ Our Universal Translator will use the recorded transcript as the input to the la
  ![transcription switch](images/Starter-NodeRED-Transcription.png)
 - Grab a *language translator* node and drag it to your flow.
 - Double-click on the Language Translator node and select English as the Source and Spanish as the Target.
- ![English to Spanish](images/Starter-NodeRED-TranslateEnglish2Spanish.png) 
+ ![English to Spanish](images/Starter-NodeRED-TranslateEnglish2Spanish.png)
 - Grab a debug node and drag it to your flow.
 - Double-click on the Text to Speech node and change the language to Spanish and select a voice.
  ![TTS Spanish](images/Starter-NodeRED-TTS-Spanish.png)
 - Wire the nodes together as shown in the screenshot.
- ![Translation flow](images/Starter-NodeRED-Translation-flow.png) 
+ ![Translation flow](images/Starter-NodeRED-Translation-flow.png)
 - Press the red **Deploy** button.
-- Press the *microphone* tab and allow your 
+- Press the *microphone* tab and allow your
 - Record a message!
 
 ## Congratulations - You've built a Universal Translation
 
 Experiment with translations between various languages
-![Universal Translator](images/Starter-NodeRED-UniversalTranslator-flow.png) 
+![Universal Translator](images/Starter-NodeRED-UniversalTranslator-flow.png)
 
 ## Get the Code
 
-If you want to import the solution, get the [code here](flows/NodeRED-UniversalTranslator-flow.json) 
+If you want to import the solution, get the [code here](flows/NodeRED-UniversalTranslator-flow.json)
 
 ## Finished
 Congratulations!  You have completed the creation of a Node-RED Starter application in IBM Cloud.
