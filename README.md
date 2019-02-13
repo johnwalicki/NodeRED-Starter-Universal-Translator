@@ -173,8 +173,8 @@ The returned audio transcription from the Text to Speech node will be returned a
 
 Our Universal Translator will use the recorded transcript as the input to the language translator node and then send the foreign language to the Text to Speech node.
 
-- Grab another *Switch* node and drag it to your flow.
-- Double-click on the Switch node and assign msg.transcription to msg.payload
+- Grab another *Change* node and drag it to your flow.
+- Double-click on the  node and assign msg.transcription to msg.payload
  ![transcription switch](images/Starter-NodeRED-Transcription.png)
 - Grab a *language translator* node and drag it to your flow.
 - Double-click on the Language Translator node and select English as the Source and Spanish as the Target.
