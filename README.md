@@ -159,7 +159,7 @@ Node-RED allows you to drag and drop Nodes from the left palette onto your flow 
 - Double-click on the Inject node and change the payload type to a string and type a message.
  ![Inject node](images/Starter-NodeRED-InjectNode.png)
 - Grab a *Text to Speech* node and drag it to your flow.  Double-click on it and select US English.
-- Grab a *Switch* node and drag it to your flow.
+- Grab a *change* node and drag it to your flow.
 The returned audio transcription from the Text to Speech node will be returned as a raw buffer containing the audio on msg.speech.  The play-audio node expects the buffer to be passed in on msg.payload so the Switch node will reassign the values. Double-click on the Switch node and assign the msg.payload to msg.speech
  ![speech to payload](images/Starter-NodeRED-SwitchNode.png)
 - Grab a *play-audio* node and drag ito to your flow.
