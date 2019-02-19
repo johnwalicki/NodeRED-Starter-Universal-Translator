@@ -24,7 +24,7 @@
         "langcustomhidden": "NoCustomisationSetting",
         "band": "BroadbandModel",
         "bandhidden": "BroadbandModel",
-        "password": "pAJYZ8x4Ph7t",
+        "password": "",
         "x": 355,
         "y": 113,
         "wires": [

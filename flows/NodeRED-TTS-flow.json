@@ -31,7 +31,7 @@
         "voice": "en-US_MichaelVoice",
         "voicehidden": "en-US_MichaelVoice",
         "format": "audio/wav",
-        "password": "5824BY7NvNkT",
+        "password": "",
         "apikey": "",
         "payload-response": false,
         "default-endpoint": false,
